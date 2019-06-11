@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('PlayfairDisplay-Regular.woff2') format('woff2'),
+        url('PlayfairDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINPro';
+    src: url('DINPro-Regular.woff2') format('woff2'),
+        url('DINPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Texta';
+    src: url('Texta-Heavy.woff2') format('woff2'),
+        url('Texta-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Texta';
+    src: url('Texta-Medium.woff2') format('woff2'),
+        url('Texta-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Texta Book';
+    src: url('Texta-Book.woff2') format('woff2'),
+        url('Texta-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Buckwheat TC Script';
+    src: url('BuckwheatTCScript-Regular.woff2') format('woff2'),
+        url('BuckwheatTCScript-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN';
+    src: url('DIN-Bold.woff2') format('woff2'),
+        url('DIN-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+

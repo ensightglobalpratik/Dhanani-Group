@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Source Serif Variable';
+    src: url('SourceSerifVariable-Roman.woff2') format('woff2'),
+        url('SourceSerifVariable-Roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
