@@ -124,10 +124,12 @@ function dhanani_group_scripts() {
 	wp_enqueue_style( 'dhanani-group-easy-responsive-tabs', get_template_directory_uri() . '/assets/css/easy-responsive-tabs.css', array(), '');
 	wp_enqueue_style( 'dhanani-group-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'dhanani-group-menu', get_template_directory_uri() . '/assets/css/menu.css', array(), '' );
+	wp_enqueue_style( 'dhanani-group-owl.carousel.min', get_template_directory_uri() . '/assets/css/owl.carousel.min.css', array(), '' );        
 	wp_enqueue_style( 'dhanani-group-aos', get_template_directory_uri() . '/assets/css/aos.css', array(), '' );        
 	wp_enqueue_style( 'dhanani-group-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), '' );        
 	wp_enqueue_script( 'dhanani-group-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '' );
 	wp_enqueue_script( 'dhanani-group-menu-js', get_template_directory_uri() . '/assets/js/menu.js', array(), '');
+	wp_enqueue_script( 'dhanani-group-owl.carousel.min-js', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(),'20151215',false);
 	wp_enqueue_script( 'dhanani-group-easy-aos-js', get_template_directory_uri() . '/assets/js/aos.js', array(),'20151215',false);
 	wp_enqueue_script( 'dhanani-group-easy-responsive-js', get_template_directory_uri() . '/assets/js/easyResponsiveTabs.js', array(),'20151215',false);
 	wp_enqueue_script( 'dhanani-group-general-js', get_template_directory_uri() . '/assets/js/general.js', array(), '20151215');

@@ -102,10 +102,10 @@ animated();
 $( document ).ready( function () {	
 	
 	// Case Studies Slider
-	/*$( '.bannerslider' ).owlCarousel( {
+	$( '.bannerslider' ).owlCarousel( {
 		loop: true,
-		nav: false,		
-		dots: false,
+		nav: true,		
+		dots: true,
 		items: 1,
 		autoplay: true,
 		autoplayTimeout:5000,
@@ -113,7 +113,7 @@ $( document ).ready( function () {
 		autoHeight: true,
 		animateOut: 'fadeOut',
 		smartSpeed: 450		
-	} );*/
+	} );
 
 	setTimeout(function(){
 		$('body').addClass('site_loaded');
@@ -134,6 +134,7 @@ $( document ).ready( function () {
 		$('.quickform').addClass('active');
 	});	
 
+	// Tabs
 	$("#historyTab").easyResponsiveTabs({
 	    type: 'default', //Types: default, vertical, accordion           
 	    width: 'auto', //auto or any custom width
@@ -147,6 +148,7 @@ $( document ).ready( function () {
 	    active_content_border_color: '#9C905C' // border color for active tabs contect in this group so that it matches the tab head border
 	});
 
+	// Animation
 	AOS.init({
 	  // Global settings:
 	  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -167,12 +169,46 @@ $( document ).ready( function () {
 	  once: false, // whether animation should happen only once - while scrolling down
 	  mirror: false, // whether elements should animate out while scrolling past them
 	  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+	});
+
+	// Less - more 
+	var showChar = 80;
+	var ellipsestext = "...";
+	var moretext = "";
+	var lesstext = "";
+	$('.moretext').each(function() {
+		var content = $(this).html();
+
+		if(content.length > showChar) {
+
+			var c = content.substr(0, showChar);
+			var h = content.substr(showChar-1, content.length - showChar);
+
+			var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+			$(this).html(html);
+		}
 
 	});
 
+	$(".morelink").click(function(){
+		if($(this).hasClass("less")) {
+			$(this).removeClass("less");
+			$(this).html(moretext);
+		} else {
+			$(this).addClass("less");
+			$(this).html(lesstext);
+		}
+		$(this).parent().prev().toggle();
+		$(this).prev().toggle();
+		return false;
+	});
+
+
+
 });
 
-
+// Header Fixed
 $( window ).scroll( function () {
 	//$( '.menu-icon' ).removeClass( 'active' );
 	//$( 'body' ).removeClass( 'menu-open' );

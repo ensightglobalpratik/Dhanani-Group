@@ -1,3 +1,9 @@
+.enumenu_ul li { padding-left: 0; } 
+.enumenu_ul li:before { display: none; }
+
+
+
+
 /*
   Only required is to display none the .menu-icon
 */
@@ -17,9 +23,10 @@
 .enumenu_ul > li:hover > a, .enumenu_ul > li.active > a { color: #d8b403; }
 .enumenu_ul > li ul { display: none }
 .enumenu_ul ul li { width: 100%; margin: 0; list-style: none; position: relative; }
-.enumenu_ul.desk ul { top: 100%; z-index: 999; list-style: none; left: 0px; background: #000000; position: absolute; min-width: 150px; }
+.enumenu_ul.desk ul { top: 100%; z-index: 999; list-style: none; left: 0px; background: #fff; position: absolute; min-width: 150px;  }
 
-.enumenu_ul li:before { display: none; }
+.enumenu_ul > li > ul { margin-top: 17px; }
+.enumenu_ul > li > ul:before { content: ''; height: 20px; position: absolute; bottom: 100%; left: 0; right: 0; }  
 
 
 /*Sub menu styles*/
@@ -27,8 +34,8 @@
 .menu.submenu-ul-level1 li a { background: rgba(31, 26, 107, 0.8); color: #fff; padding-left: 90px; }
 .enumenu_ul.desk li:hover > ul { display: block; opacity: 1; }
 .enumenu_ul.desk .sb-menu .sb-menu { left: 100%; top: 0; }
-.enumenu_ul.desk ul li a { padding: 10px 10px; display: block; color: #fff; font-size: 16px; text-align: center }
-.enumenu_ul.desk ul li:hover > a { background: #e6b705; color: #fff; }
+.enumenu_ul.desk ul li a { padding: 6px 10px; display: block; color: #071d4b; font-size: 16px; text-align: center }
+.enumenu_ul.desk ul li:hover > a { background: #071d4b; color: #fff; }
 .enumenu_ul .arrow { position: absolute; right: 10px; top: 5px; width: 30px; height: 30px; background: url(../images/plus.png) no-repeat center center; cursor: pointer; z-index: 999 }
 .enumenu_ul .arrow.up { background: url(../images/minus.png) no-repeat center center }
 @media (max-width: 767px) {

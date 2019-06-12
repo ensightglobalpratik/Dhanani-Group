@@ -61,17 +61,16 @@ if (function_exists('acf_add_options_page')) {
         'icon_url'   => 'dashicons-menu',
         'position'   => 60,
 	) );
-    acf_add_options_sub_page(array(
-        'title' => 'Header Section',
-        'parent' => 'empl-theme-options',
-        'capability' => 'manage_options'
-    ));
-
-    acf_add_options_sub_page(array(
-        'title' => 'Footer Section',
-        'parent' => 'empl-theme-options',
-        'capability' => 'manage_options'
-    ));
+    acf_add_options_sub_page( array(
+        'page_title'  => 'Theme Branding Settings',
+        'menu_title'  => 'Header',
+        'parent_slug' => 'theme-general-settings',
+	) );
+	acf_add_options_sub_page( array(
+        'page_title'  => 'Theme Footer Settings',
+        'menu_title'  => 'Footer',
+        'parent_slug' => 'theme-general-settings',
+	) );
 }
 
 /**
@@ -150,3 +149,12 @@ function dhanani_group_favicon() {
 }
 
 add_action('wp_head', 'dhanani_group_favicon');
+/*****************
+ * Get option value
+ */
+function get_option_value( $id ) {
+	if ( function_exists( 'get_field' ) ):
+		$val = get_field( $id, 'option' );
+	endif;
+	return $val;
+}
