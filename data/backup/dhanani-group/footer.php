@@ -27,8 +27,9 @@
 
 <?php wp_footer(); ?>
 
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/menu.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/general.js"></script>
+<!--<script src="<?php echo get_template_directory_uri(); ?>/assets/js/menu.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/easyResponsiveTabs.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/general.js"></script>-->
 
 </body>
 </html>

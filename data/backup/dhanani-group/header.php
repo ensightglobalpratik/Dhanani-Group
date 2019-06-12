@@ -18,8 +18,9 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	
 	<?php wp_head(); ?>
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/responsive.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/menu.css">
+<!--	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/responsive.css">-->
+<!--	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/menu.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/easy-responsive-tabs.css">-->
 </head>
 
 <body <?php body_class(); ?>>
