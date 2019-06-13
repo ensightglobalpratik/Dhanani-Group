@@ -14,6 +14,29 @@
 
 get_header();
 ?>
+<?php
+    $page_for_posts = get_option( 'page_for_posts' );
+        if( have_rows('two_column_block_group_blog',$page_for_posts) ): 
+            while( have_rows('two_column_block_group_blog',$page_for_posts) ): the_row();
+                $main_title=get_sub_field('main_title');
+                $content=get_sub_field('content');
+    ?>
+                <section class="content_sec">
+                    <div class="container">
+                        <div class="content_row">
+                            <div class="content_left">
+                                <?php echo (!empty($main_title)?'<div class="heading_title"> <h2>'.$main_title.'</h2> </div>':'');?>                                
+                            </div>
+                            <div class="content_right">
+                                <?php echo (!empty($content)? $content :'');?>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    <?php
+            endwhile;
+        endif;
+    ?>  
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -38,12 +61,16 @@ get_header();
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/content', 'blog' );
 
 			endwhile;
 
-			the_posts_navigation();
-
+			the_posts_navigation( array(
+                            'prev_text' => __( 'Next', 'textdomain' ),
+                            'next_text' => __( 'Previous', 'textdomain' ),
+                        ));
+                        global $wp_query;
+                        echo '<span>page '.(!empty($wp_query->query['paged'])?$wp_query->query['paged']:'1').'of'.$wp_query->max_num_pages.'</span>';
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
@@ -55,5 +82,5 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

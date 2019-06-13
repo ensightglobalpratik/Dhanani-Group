@@ -45,3 +45,57 @@
                 </div>
             </header><!-- #masthead -->
             <div id="content" class="site-content">
+                <?php if(!(is_front_page())):?>
+                <div class="banner">
+                    <div class="bannerslider owl-carousel">
+                        <div>
+                            <div class="slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/madeline-4.jpg');">
+                                <div class="container">
+                                    <div class="banner_content">
+                                        <h2>We Believe People First, Always</h2>
+                                    </div>
+                                </div>
+                                <div class="slide_caption_wrap">
+                                    <div class="container">
+                                        <div class="slide_caption">
+                                            <p>Names of People in photo, add photo credit here too, perhaps location.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/madeline-2.jpg');">
+                                <div class="container">
+                                    <div class="banner_content">
+                                        <h2>We Believe People First, Always</h2>
+                                    </div>
+                                </div>
+                                <div class="slide_caption_wrap">
+                                    <div class="container">
+                                        <div class="slide_caption">
+                                            <p>Names of People in photo, add photo credit here too, perhaps location.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/madeline-3.jpg');">
+                                <div class="container">
+                                    <div class="banner_content">
+                                        <h2>We Believe People First, Always</h2>
+                                    </div>
+                                </div>
+                                <div class="slide_caption_wrap">
+                                    <div class="container">
+                                        <div class="slide_caption">
+                                            <p>Names of People in photo, add photo credit here too, perhaps location.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+                <?php endif;?>
