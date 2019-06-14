@@ -8,6 +8,16 @@
  *
  */
 get_header();
+    while ( have_posts() ) :
+            the_post();
+                if(get_the_content()):
+                    echo '<section class="page_title_bar" style="background-color: #e8e8e8;">
+                            <div class="container">';
+                                get_template_part( 'template-parts/content', 'page' );
+                            echo '</div>
+                    </section>'    ;
+                endif;
+    endwhile; // End of the loop.
 ?>
     <?php
         if( have_rows('banner_group') ): 

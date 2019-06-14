@@ -197,7 +197,13 @@ function fn_featured_news_article($atts) {
 
 	echo '</div>';
 	return ob_get_clean();
-
 }
-
 add_shortcode( 'sc_recent_news', 'fn_featured_news_article' );
+/****************
+ * stop mapplic plugin update 
+ */
+function filter_plugin_updates( $value ) {
+    unset( $value->response['mapplic/mapplic.php'] );
+    return $value;
+}
+add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );

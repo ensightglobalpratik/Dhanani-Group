@@ -115,29 +115,69 @@ get_header();
                 <div class="bio_block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bio-1.jpg');">
                     <span class="bio_caption">First & Last Name, Position</span>
                 </div>
+                <div class="bio_content">
+                    <span class="bio_top_title">Position/Title</span>
+                    <h3>First & Last Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy tetuer adipiscing elit, sed diam nonummy. ing elit, sed diam nonummy. nonummy diam nonummy amet, consectetuer adipiscing elit, sed.</p>
+                </div>
             </a>
             <a href="#bio-2" class="bio_col">
                 <div class="bio_block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bio-2.jpg');">
                     <span class="bio_caption">First & Last Name, Position</span>
                 </div>
+                <div class="bio_content">
+                    <span class="bio_top_title">Position/Title</span>
+                    <h3>First & Last Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy tetuer adipiscing elit, sed diam nonummy. ing elit, sed diam nonummy. nonummy diam nonummy amet, consectetuer adipiscing elit, sed.</p>
+                </div>
             </a>
             <a href="#bio-3" class="bio_col">
                 <div class="bio_block">&nbsp;</div>
+                <div class="bio_content">
+                    <span class="bio_top_title">Position/Title</span>
+                    <h3>First & Last Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy tetuer adipiscing elit, sed diam nonummy. ing elit, sed diam nonummy. nonummy diam nonummy amet, consectetuer adipiscing elit, sed.</p>
+                </div>
             </a>
             <a href="#bio-4" class="bio_col">
                 <div class="bio_block">&nbsp;</div>
+                <div class="bio_content">
+                    <span class="bio_top_title">Position/Title</span>
+                    <h3>First & Last Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy tetuer adipiscing elit, sed diam nonummy. ing elit, sed diam nonummy. nonummy diam nonummy amet, consectetuer adipiscing elit, sed.</p>
+                </div>
             </a>
             <a href="#bio-5" class="bio_col">
                 <div class="bio_block">&nbsp;</div>
+                <div class="bio_content">
+                    <span class="bio_top_title">Position/Title</span>
+                    <h3>First & Last Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy tetuer adipiscing elit, sed diam nonummy. ing elit, sed diam nonummy. nonummy diam nonummy amet, consectetuer adipiscing elit, sed.</p>
+                </div>
             </a>
             <a href="#bio-6" class="bio_col">
                 <div class="bio_block">&nbsp;</div>
+                <div class="bio_content">
+                    <span class="bio_top_title">Position/Title</span>
+                    <h3>First & Last Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy tetuer adipiscing elit, sed diam nonummy. ing elit, sed diam nonummy. nonummy diam nonummy amet, consectetuer adipiscing elit, sed.</p>
+                </div>
             </a>
             <a href="#bio-7" class="bio_col">
                 <div class="bio_block">&nbsp;</div>
+                <div class="bio_content">
+                    <span class="bio_top_title">Position/Title</span>
+                    <h3>First & Last Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy tetuer adipiscing elit, sed diam nonummy. ing elit, sed diam nonummy. nonummy diam nonummy amet, consectetuer adipiscing elit, sed.</p>
+                </div>
             </a>
             <a href="#bio-8" class="bio_col">
                 <div class="bio_block">&nbsp;</div>
+                <div class="bio_content">
+                    <span class="bio_top_title">Position/Title</span>
+                    <h3>First & Last Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy diam nonummy amet, consectetuer adipiscing elit, sed diam nonummy tetuer adipiscing elit, sed diam nonummy. ing elit, sed diam nonummy. nonummy diam nonummy amet, consectetuer adipiscing elit, sed.</p>
+                </div>
             </a>
             <a href="#bio-9" class="bio_col">
                 <div class="bio_block">&nbsp;</div>

@@ -64,13 +64,14 @@ get_header();
 				get_template_part( 'template-parts/content', 'blog' );
 
 			endwhile;
-
-			the_posts_navigation( array(
-                            'prev_text' => __( 'Next', 'textdomain' ),
-                            'next_text' => __( 'Previous', 'textdomain' ),
-                        ));
-                        global $wp_query;
-                        echo '<span>page '.(!empty($wp_query->query['paged'])?$wp_query->query['paged']:'1').'of'.$wp_query->max_num_pages.'</span>';
+                        echo '<div class="container pagination_wrap">';
+                                the_posts_navigation( array(
+                                    'prev_text' => __( '//Next', 'textdomain' ),
+                                    'next_text' => __( 'Previous', 'textdomain' ),
+                                ));
+                                global $wp_query;
+                                echo '<span>page '.(!empty($wp_query->query['paged'])?$wp_query->query['paged']:'1').'of'.$wp_query->max_num_pages.'</span>';
+                        echo '</div>';
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );

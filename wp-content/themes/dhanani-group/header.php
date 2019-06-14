@@ -46,56 +46,39 @@
             </header><!-- #masthead -->
             <div id="content" class="site-content">
                 <?php if(!(is_front_page())):?>
-                <div class="banner">
-                    <div class="bannerslider owl-carousel">
-                        <div>
-                            <div class="slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/madeline-4.jpg');">
-                                <div class="container">
-                                    <div class="banner_content">
-                                        <h2>We Believe People First, Always</h2>
-                                    </div>
-                                </div>
-                                <div class="slide_caption_wrap">
-                                    <div class="container">
-                                        <div class="slide_caption">
-                                            <p>Names of People in photo, add photo credit here too, perhaps location.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <?php
+                    global $post;
+                    $$page_for_posts = get_option( 'page_for_posts' );
+                    if(is_home()):
+                        $id=$$page_for_posts;
+                    else:  
+                        $id=$post->ID;
+                    endif;
+                    $banner_image_group=get_field('banner_image_group',$id);
+                    if(!empty($banner_image_group)):
+                ?>
+                        <div class="banner">
+                            <div class="bannerslider owl-carousel">
+                                <?php 
+                                    foreach($banner_image_group as $row):
+                                        $background_image=$row['background_image'];
+                                        $title=$row['title'];
+                                        $caption=$row['caption'];
+                                ?>
+                                            <div>
+                                                <div class="slide" style="background-image: url('<?php echo $background_image['url']; ?>');">
+                                                    <div class="container">
+                                                        <?php echo (!empty($title)?'<div class="banner_content"><h2>'.$title.'</h2></div>':'');?>
+                                                    </div>
+                                                    <div class="slide_caption_wrap">
+                                                        <div class="container">
+                                                            <?php echo (!empty($caption)?'<div class="slide_caption">'.$caption.'</div>':'');?>                                                
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                <?php endforeach;?>                                
+                            </div>        
                         </div>
-                        <div>
-                            <div class="slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/madeline-2.jpg');">
-                                <div class="container">
-                                    <div class="banner_content">
-                                        <h2>We Believe People First, Always</h2>
-                                    </div>
-                                </div>
-                                <div class="slide_caption_wrap">
-                                    <div class="container">
-                                        <div class="slide_caption">
-                                            <p>Names of People in photo, add photo credit here too, perhaps location.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/madeline-3.jpg');">
-                                <div class="container">
-                                    <div class="banner_content">
-                                        <h2>We Believe People First, Always</h2>
-                                    </div>
-                                </div>
-                                <div class="slide_caption_wrap">
-                                    <div class="container">
-                                        <div class="slide_caption">
-                                            <p>Names of People in photo, add photo credit here too, perhaps location.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>        
-                </div>
+                <?php endif;?>
                 <?php endif;?>

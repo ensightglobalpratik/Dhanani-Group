@@ -101,19 +101,21 @@ animated();
 
 $( document ).ready( function () {	
 	
-	$(".bio_list .bio_col").click(function () {
+	$(".bio_list .bio_col").bind("touchstart click",function () {
 		var addressValue = $(this).attr("href");
 	    	mainHeight = $( 'header.site-header' ).outerHeight();
 	    $(this).parents('.bio_sec').find(addressValue).addClass('active');
 	    $(this).parents('.bio_sec').find(addressValue).siblings().removeClass("active");
-
+	    console.log(this);
+	    $(".active_bio_row.active .active_bio_content").children().not(".next_link").remove();
+	    $(this).find(".bio_content").children().clone().prependTo(".active_bio_row.active .active_bio_content");
 	    $('html, body').animate({
 	        scrollTop: $( $.attr(this, 'href') ).offset().top - mainHeight
 	    }, 1000);
 	    return false;
 	});
 
-	$('.next_link').click(function () {
+	$('.next_link').bind("touchstart click",function () {
 		$(this).parents('.active_bio_row').removeClass("active");
 		$(this).parents('.active_bio_row').next('.active_bio_row').addClass('active');
 
@@ -130,13 +132,28 @@ $( document ).ready( function () {
 		nav: true,		
 		dots: true,
 		items: 1,
-		//autoplay: true,
+		autoplay: true,
 		autoplayTimeout:5000,
 		animateOut: 'fadeOut',
 		autoHeight: true,
 		animateOut: 'fadeOut',
 		smartSpeed: 450		
 	} );
+
+	// Testimonials Slider
+	$('.testimonial_slider').owlCarousel( {
+		loop: true,
+		nav: true,		
+		dots: true,
+		items: 3,
+		//autoplay: true,
+		autoplayTimeout:5000,
+		autoHeight: true,
+		animateOut: 'fadeOut',
+		smartSpeed: 450		
+	});
+
+
 
 	setTimeout(function(){
 		$('body').addClass('site_loaded');
@@ -158,22 +175,24 @@ $( document ).ready( function () {
 	});	
 
 	// Tabs
+	setTimeout(()=>{
+			mapstyle=$(".resp-tab-content-active .mapplic-map").attr("style");
+			//console.log(mapstyle);
+	},2000);
 	$("#historyTab").easyResponsiveTabs({
 	    type: 'default', //Types: default, vertical, accordion           
 	    width: 'auto', //auto or any custom width
 	    fit: true,   // 100% fits in a container
 	    closed: false, // Close the panels on start, the options 'accordion' and 'tabs' keep them closed in there respective view types
-	    activate: function() {console.log($(this).next(".resp-tab-content-active").find(".mapplic-map").attr("style",""));$(this).next(".resp-tab-content-active").find(".mapplic-map").attr("style",mapstyle)},  // Callback function, gets called if tab is switched
+	    activate: function() {console.log(mapstyle);$(".resp-tab-content-active .mapplic-map").attr("style","");
+	    $(".resp-tab-content-active .mapplic-map").attr("style",mapstyle)},  // Callback function, gets called if tab is switched
 	    tabidentify: 'tab_identifier_child', // The tab groups identifier *This should be a unique name for each tab group and should not be defined in any styling or css file.
 	    activetab_bg: '#B5AC5F', // background color for active tabs in this group
 	    inactive_bg: '#E0D78C', // background color for inactive tabs in this group
 	    active_border_color: '#9C905C', // border color for active tabs heads in this group
 	    active_content_border_color: '#9C905C' // border color for active tabs contect in this group so that it matches the tab head border
 	});
-	setTimeout(()=>{
-			mapstyle=$(".mapplic-map").attr("style");
-			console.log(mapstyle);
-	},2000);
+	
 	// Animation
 	AOS.init({
 	  // Global settings:

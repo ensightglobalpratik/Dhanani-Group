@@ -1,193 +1,79 @@
 <?php
 /*
-  Template Name: Our Brands
+  Template Name: Our Brands Page Template
  */
 get_header();
+    while ( have_posts() ) :
+            the_post();
+                if(get_the_content()):
+                    echo '<section class="page_title_bar">
+                            <div class="container">';
+                                get_template_part( 'template-parts/content', 'page' );
+                            echo '</div>
+                    </section>'    ;
+                endif;
+    endwhile; // End of the loop.
+    
+    if( have_rows('full_width_content_group') ): 
+            while( have_rows('full_width_content_group') ): the_row();
+                    $background_color=get_sub_field('background_color');
+                    $title=get_sub_field('title');
+                    $content=get_sub_field('content');
+                            echo '<section class="page_title_bar" style="background-color: '.$background_color.';">
+                                    <div class="container">
+                                        '.(!empty($title)? '<div class="heading_title"> <h2>'.$title.'</h2> </div>':'').' 
+                                        '.(!empty($content)? '<div class="page_title_content">'.$content.'</div>':'').'                                           
+                                    </div>
+                            </section>';
+            endwhile;
+    endif;
 ?>
-
-<!-- Values and Vision -->
-<section class="values_vision_sec" style="background-color: #e8e8e8;">
-    <div class="container">
-        <div class="heading_title">
-            <h2>Our Brands</h2>
-        </div>
-        <div class="values_vision_content">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi sed diam nonummy nibh euismod tincidunt ut laoreet.</p>            
-        </div>
-    </div>
-</section>
-
-<section class="row_column_sec">
-    <div class="row_column_wrap">
-        <div class="container container-lg">
-            <div class="row_column">
-                <div class="image_column" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/burger-king.jpg');"></div>
-                <div class="content_column">
-                    <div class="brand_content_row right">
-                        <h3>North East Foods</h3>
-                        <div class="brand_text_area">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi Lorem ipsum selit, Ldolor sit amet.</p>
-                            <a href="#" class="content_link"><em class="arrow_sign">&gt;</em> Contact</a>
-                        </div>
-                        <div class="counter_row">
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/location-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">1,122</span>
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/direction-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">25</span>%
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dollar-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">5.4</span>
-                                </div>
-                                <h4>Locations</h4>
+<?php if( have_rows('two_column_block_section_group') ):?>
+        <section class="row_column_sec">
+            <?php while ( have_rows('two_column_block_section_group') ) : the_row(); $image=get_sub_field('image');?>
+                    <div class="row_column_wrap">
+                        <div class="container container-lg">
+                            <div class="row_column">
+                                <div class="image_column" style="background-image: url('<?php echo $image['url']; ?>');"></div>
+                                    <?php $i=0; if( have_rows('block_content') ):?>
+                                        <div class="content_column">
+                                            <?php while ( have_rows('block_content') ) : the_row(); if($i%2==0): $class="right";  else:  $class="left";  endif; $title=get_sub_field('title');  $contents=get_sub_field('contents');  $button_label=get_sub_field('button_label');  $button_link=get_sub_field('button_link');?>
+                                                    <div class="brand_content_row <?php echo $class;?>">
+                                                        <h3><?php echo $title;?></h3>
+                                                        <div class="brand_text_area">
+                                                            <?php echo $contents;?>
+                                                            <?php if(!empty($button_link)):?><a href="<?php echo $button_link;?>" class="content_link"><em class="arrow_sign">&gt;</em> <?php echo $button_label;?></a><?php endif;?>
+                                                        </div>
+                                                        <?php  if( have_rows('counter_data') ): ?>
+                                                            
+                                                                    <div class="counter_row">
+                                                                        <?php 
+                                                                        while ( have_rows('counter_data') ) : the_row();
+                                                                            $icon=get_sub_field('icon');
+                                                                            $number=get_sub_field('number');
+                                                                            $suffix=get_sub_field('suffix');
+                                                                            $title_sub=get_sub_field('title_sub');
+                                                                        ?>
+                                                                        <div class="counter_col">
+                                                                            <img src="<?php echo $icon['url']; ?>" class="sm-ico" alt="<?php echo $icon['alt']; ?>">
+                                                                            <div class="counter_wrap">
+                                                                                <span class="counter"><?php echo $number;?></span><?php echo $suffix;?>
+                                                                            </div>
+                                                                            <h4><?php echo $title_sub;?></h4>
+                                                                        </div>
+                                                                        <?php endwhile;?>
+                                                                    </div>
+                                                        <?php  endif;?>
+                                                     </div>
+                                            <?php $i++; endwhile;?>
+                                        </div>
+                                    <?php endif;?>
                             </div>
                         </div>
-                     </div>
-                     <div class="brand_content_row left">
-                        <h3>Tri City Foods</h3>
-                        <div class="brand_text_area">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi Lorem ipsum selit, Ldolor sit amet.</p>
-                            <a href="#" class="content_link"><em class="arrow_sign">&gt;</em> Contact</a>
-                        </div>
-                        <div class="counter_row">
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/location-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">1,122</span>
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/direction-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">25</span>%
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dollar-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">5.4</span>
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                        </div>
-                     </div>
-                     <div class="brand_content_row right">
-                        <h3>North East Foods</h3>
-                        <div class="brand_text_area">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi Lorem ipsum selit, Ldolor sit amet.</p>
-                            <a href="#" class="content_link"><em class="arrow_sign">&gt;</em> Contact</a>
-                        </div>
-                        <div class="counter_row">
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/location-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">1,122</span>
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/direction-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">25</span>%
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dollar-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">5.4</span>
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                        </div>
-                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<div class="row_column_wrap">
-        <div class="container container-lg">
-            <div class="row_column">
-                <div class="image_column" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/louisiana.jpg');"></div>
-                <div class="content_column">
-                    <div class="brand_content_row left">
-                        <h3>Texas Foods</h3>
-                        <div class="brand_text_area">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi Lorem ipsum selit, Ldolor sit amet.</p>
-                            <a href="#" class="content_link"><em class="arrow_sign">&gt;</em> Contact</a>
-                        </div>
-                        <div class="counter_row">
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/location-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">1,122</span>
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/direction-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">25</span>%
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dollar-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">5.4</span>
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                        </div>
-                     </div>
-                     <div class="brand_content_row right">
-                        <h3>Tri City Foods</h3>
-                        <div class="brand_text_area">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi Lorem ipsum selit, Ldolor sit amet.</p>
-                            <a href="#" class="content_link"><em class="arrow_sign">&gt;</em> Contact</a>
-                        </div>
-                        <div class="counter_row">
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/location-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">1,122</span>
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/direction-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">25</span>%
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                            <div class="counter_col">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dollar-icon-sm.svg" alt="">
-                                <div class="counter_wrap">
-                                    <span class="counter">5.4</span>
-                                </div>
-                                <h4>Locations</h4>
-                            </div>
-                        </div>
-                     </div>
-                     
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                    </div>
+        <?php endwhile;?>
+        </section>
+<?php endif;?>
 
 
 
