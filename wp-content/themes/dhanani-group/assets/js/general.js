@@ -100,7 +100,31 @@ $( window ).scroll( function () {
 animated();
 
 $( document ).ready( function () {	
-	$(".bio_list .bio_col").bind("touchstart click",function () {
+
+	/*$(".bio_list .bio_col").bind("touchstart click",function () {
+	    $('.bio_list .bio_col').siblings().removeClass('active');
+		$(this).addClass('active');
+	});
+
+	$(".biolinkwrap .next_link").on("click",function(e){ 
+		alert('clicked');
+    e.preventDefault();
+     var i= $('.active_bio_row.active').index();
+     i= i >= $(".container .active_bio_row").length-1 ? 0 : i+1;
+     $('.container .active_bio_row').removeClass("active");
+    $('.container .active_bio_row').eq(i).addClass("active");
+    
+    // var j= $('.bio_col.active').index();
+    // j = j >= $('.container .bio_list').length-1 ? 0 : j+1;
+    $('.bio_list .bio_col').removeClass("active");
+    $('.bio_list .bio_col').eq(i).addClass("active");
+    var col_content = $('.bio_col.active').find('.bio_content').html();
+    console.log(col_content);
+    $('.active_bio_row.active').find('.active_bio_content').html(col_content);
+
+});*/
+
+	/*$(".bio_list .bio_col").bind("touchstart click",function () {
 		var addressValue = $(this).attr("href");
 	    	mainHeight = $( 'header.site-header' ).outerHeight();
 	    $(this).parents('.bio_sec').find(addressValue).addClass('active');
@@ -126,7 +150,7 @@ $( document ).ready( function () {
 	    		    scrollTop: $("#"+getid).offset().top - mainHeight
 	  		  }, 1000);
 			}
-		})
+		})*/
 		/*$(this).parents('.active_bio_row').removeClass("active");
 		$(this).parents('.active_bio_row').next('.active_bio_row').addClass('active');
 
@@ -135,7 +159,7 @@ $( document ).ready( function () {
 	        scrollTop: $( $.attr(this, 'href') ).offset().top - mainHeight
 	    }, 1000);
 	    return false;*/
-	});
+	/*});*/
 
 	// Case Studies Slider
 	$( '.bannerslider' ).owlCarousel( {
@@ -431,4 +455,42 @@ $(window).on("scroll",function(){
 
 
 
+var $this;
+$(document).ready(function(){
+	
+	$(".bio_list a").on("click",function(e){
+		e.preventDefault();
+		$(this).siblings().removeClass("active");
+		$(this).addClass("active");
+		var i=$(".bio_col.active").index();
+		$(".active_bio_wrap .active_bio_row").removeClass("active");
+		$(".active_bio_wrap .active_bio_row").eq(i).addClass("active").find("active_bio_content").html("");
+		$(".active_bio_wrap .active_bio_row.active").find("active_bio_content").html($(this).find(".bio_content").html());
+	})
+var i,j;
+var buttons=$(".active_bio_content").find(".biolinkwrap").html();
+console.log(buttons);
+	$(document).on("click",".next_link",function(e){
+		e.preventDefault();
+		 i=$(".active_bio_row.active").index();
+		 i = i >= $(".active_bio_wrap .container").children().length-1 ? 0 : i+1;
+		$(".bio_list").find(".bio_col").removeClass("active");
+		$(".active_bio_row").removeClass("active");
+		$(".bio_list").find(".bio_col").eq(i).addClass("active").find(".bio_content").html();
+		$(".active_bio_row").eq(i).addClass("active").find(".active_bio_content").html($(".bio_list").find(".bio_col").eq(i).addClass("active").find(".bio_content").html());
+		$(".active_bio_row").eq(i).find(".active_bio_content").append('<div class="biolinkwrap">'+buttons+'</div>');
+
+	})
+	
+	$(document).on("click",".prev_link",function(e){
+		e.preventDefault();
+		 j=$(".active_bio_row.active").index();
+		 j--;
+		$(".bio_list").removeClass("active");
+		$(".active_bio_row").removeClass("active");
+		$(".bio_list").eq(j).addClass("active").find(".bio_content").html();
+		$(".active_bio_row").eq(j).addClass("active").find(".active_bio_content").html($(".bio_list").find(".bio_col").eq(j).addClass("active").find(".bio_content").html());
+		$(".active_bio_row").eq(j).find(".active_bio_content").append('<div class="biolinkwrap">'+buttons+'</div>');
+	})	
+})
 
