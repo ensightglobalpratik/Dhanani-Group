@@ -13,7 +13,7 @@
         $.fn.responsiveMenu.defaultOptions = {
             "menuIcon_text": '',
 			"menuslide_overlap":false,
-            "menuslide_push":false,
+            "menuslide_push":false, 
             "menuslide_direction":''
         };
         /**

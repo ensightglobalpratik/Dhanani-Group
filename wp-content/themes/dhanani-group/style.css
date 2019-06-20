@@ -486,7 +486,7 @@ header.site-header .container { display: flex; }
 
 .admin-bar header.site-header { top: 32px; }
 
-.main-header{ display: flex; width: 100%; position: relative; z-index: 1; height: 153px; padding: 17px 0; }
+.main-header{ display: flex; width: 100%; position: relative; z-index: 1; padding: 17px 0; }
 .logo {display: inline-block;margin-left: 28px;}
 .logo a { display: block; max-width: 238px; width: 100%; }
 .logo a img { width: 100%; } 
@@ -687,7 +687,7 @@ background: linear-gradient(to right, rgba(9,20,58,0.75) 0%, rgba(9,20,58,0) 100
 ################ */
 .row_column_sec {}
 .row_column_wrap {position: relative;overflow: hidden;margin-bottom: 16px;padding-top: 50px;padding-bottom: 50px;}
-.row_column { display: flex; }
+.row_column { display: flex; flex-wrap: wrap; }
 .image_column {background-repeat: no-repeat;background-position: center;background-size: cover;position: absolute;top: 0;left: 0;bottom: 0;width: 45%;z-index: 1;}
 .content_column {width: 55%;margin-left: auto;padding-top: 20px;padding-bottom: 20px;padding-right: 80px;padding-left: 31px;}
 .content_column h3 { color: #000; position: relative; margin-bottom: 35px; display: inline-block; }
@@ -748,7 +748,7 @@ span.wpcf7-not-valid-tip { margin-top: 10px; }
                News page
 ################ */
 .news_row_sec { padding-top: 60px; padding-bottom: 60px; }
-.news_row_sec .row { display: flex; }
+.news_row_sec .row { display: flex; flex-wrap: wrap; }
 .news_row_sec .post-thumbnail { width: 40%; display: block; }
 .news_row_sec .post-thumbnail img { max-width: 370px; }
 .news_row_sec .news_thumb_content { width: 60%; padding: 0 0 0 50px }
@@ -770,7 +770,7 @@ span.wpcf7-not-valid-tip { margin-top: 10px; }
 /* ################
                Careers page
 ################ */
-.whyus_menu { display: flex; }
+.whyus_menu { display: flex; flex-wrap: wrap; }
 .whyus_menu li { padding-left: 0; margin-right: 100px; }
 .whyus_menu li:before { display: none; }
 .whyus_menu li a { font-family: 'DINPro'; font-weight: normal; font-size: 30px; line-height: 38px; color: #1854cb; }
@@ -778,16 +778,16 @@ span.wpcf7-not-valid-tip { margin-top: 10px; }
 
 .annual_promotions_sec {background-repeat: no-repeat;background-position: center;background-size: cover;padding-top: 35px;padding-bottom: 59px;position: relative;}
 .annual_promotions_sec:before { content: ''; background-color: #fff; position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0.75; }
-.circle_row {display: flex;justify-content: space-between;padding: 12px 0 0 38px;}
-.circle_col {width: 33.333%;max-width: 298px;text-align: center;}
+.circle_row {display: flex;flex-wrap:wrap;justify-content: space-between;padding: 12px 0 0 38px;margin-left: -15px; margin-right: -15px;}
+.circle_col {width: 33.333%;max-width: 298px;text-align: center;padding-left: 15px;padding-right: 15px;}
 .circle_col p {color: #1854c7;line-height: 24px;}
-.circle {background-color: #08143a;border-radius: 50%;width: 155px;height: 155px;font-size: 75px;color: #fff;display: flex;align-items: center;justify-content: center;margin: 0 auto 27px;}
+.circle {background-color: #08143a;border-radius: 50%;width: 155px;height: 155px;font-size: 75px;color: #fff;display: flex;align-items: center;justify-content: center;margin: 0 auto 27px;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
 .annual_promotions_sec .container { position: relative; }
 
 .content_module {padding-top: 87px;padding-bottom: 60px;}
-.content_module_row { display: flex; }
-.content_module_title { width: 50%; }
-.content_module_content { width: 50%; }
+.content_module_row { display: flex; flex-wrap: wrap; margin-left: -15px; margin-right: -15px; }
+.content_module_title { width: 50%; padding-left: 15px; padding-right: 15px; }
+.content_module_content { width: 50%; padding-left: 16px; padding-right: 15px; }
 .content_module_content p { font-size: 25px; line-height: 35px; font-weight: 100; }
 .content_module_content .button {padding: 8px 21px;margin-top: 46px;}
 

@@ -179,14 +179,29 @@ $( document ).ready( function () {
 	$('.testimonial_slider').owlCarousel( {
 		loop: true,
 		nav: true,		
-		dots: false,
-		items: 3,
-		//autoplay: true,
+		dots: false,		
+		autoplay: true,
 		margin:37,
 		autoplayTimeout:5000,
 		autoHeight: true,
 		animateOut: 'fadeOut',
-		smartSpeed: 450		
+		smartSpeed: 450,
+		responsive : {
+		    // breakpoint from 0 up
+		    0 : {
+		        margin:20,
+		        items: 1
+		    },		    
+		    // breakpoint from 768 up
+		    640 : {
+		        margin:37,
+		        items: 2
+		    },
+		    1024 : {
+		        margin:37,
+		        items: 3
+		    }
+		}	
 	});
 
 
