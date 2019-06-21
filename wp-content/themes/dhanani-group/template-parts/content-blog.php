@@ -10,7 +10,7 @@
 ?>
 <section class="news_row_sec">
 	<div class="container">
-		<div class="row">
+		<div class="row" data-aos="fade-up">
 			<?php dhanani_group_post_thumbnail(); ?>
 			<?php
 			    echo '<div class="news_thumb_content">

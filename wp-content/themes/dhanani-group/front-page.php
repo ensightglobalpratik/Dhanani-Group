@@ -33,13 +33,13 @@ get_header();
                 <div class="banner home-banner">
                     <div class="banner-row">
                         <div class="banner-column burger-king" style="background-image: url('<?php echo $banner_image_one['url']; ?>');">
-                            <?php echo (!empty($logo_one)?'<img src="'.$logo_one['url'].'" alt="'.$logo_one['alt'].'">':'');?>
+                            <?php echo (!empty($logo_one)?'<img data-aos="zoom-in" src="'.$logo_one['url'].'" alt="'.$logo_one['alt'].'">':'');?>
                         </div>
                         <div class="banner-column popeyes" style="background-image: url('<?php echo $banner_image_two['url']; ?>');">
-                            <?php echo (!empty($logo_two)?'<img src="'.$logo_two['url'].'" alt="'.$logo_two['alt'].'">':'');?>
+                            <?php echo (!empty($logo_two)?'<img data-aos="zoom-in" data-aos-delay="400" src="'.$logo_two['url'].'" alt="'.$logo_two['alt'].'">':'');?>
                         </div>
                         <div class="banner-column la-madeleine" style="background-image: url('<?php echo $banner_image_three['url']; ?>');">
-                            <?php echo (!empty($logo_three)?'<img src="'.$logo_three['url'].'" alt="'.$logo_three['alt'].'">':'');?>
+                            <?php echo (!empty($logo_three)?'<img data-aos="zoom-in" data-aos-delay="800" src="'.$logo_three['url'].'" alt="'.$logo_three['alt'].'">':'');?>
                         </div>
                     </div>
                 </div>

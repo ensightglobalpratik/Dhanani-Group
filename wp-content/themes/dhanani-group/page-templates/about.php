@@ -69,7 +69,7 @@ get_header();
                     $position=get_sub_field('position');
                     $content=get_sub_field('content');
             ?>
-            <a href="#bio-<?php echo $counter;?>" class="bio_col ">
+            <a href="#bio-<?php echo $counter;?>" class="bio_col " data-aos="fade-up" data-aos-duration="2000">
                 <?php if($image || $name || $position): ?>
                 <div class="bio_block" style="background-image: url('<?php echo $image['url']; ?>');">
                     <?php echo (!empty($name) || !empty($position) ? '<span class="bio_caption">'.$name.', '.$position.'</span>': '');?>

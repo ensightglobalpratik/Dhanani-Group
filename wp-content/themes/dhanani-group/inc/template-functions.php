@@ -180,7 +180,7 @@ function fn_featured_news_article($atts) {
                         if ($cpt_query->have_posts()){ 	
                            while ($cpt_query->have_posts()) { 
 			    $cpt_query->the_post();
-                                    echo '<div class="news_thumb_col">
+                                    echo '<div class="news_thumb_col" data-aos="fade-up">
                                             <a href="'.get_the_permalink().'" class="news_thumb">
                                                 <div class="news_thumb_image_wrap"><div class="news_thumb_image" style="background-image: url('.get_the_post_thumbnail_url().');"></div></div>
                                                 <div class="news_thumb_content">

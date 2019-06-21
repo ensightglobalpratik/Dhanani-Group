@@ -39,7 +39,16 @@
                                         endforeach;
                                     echo '</ul>';
                                 endif;
-                                wp_nav_menu(array('menu_class' => 'enumenu_ul menu', 'menu' => 'Main Menu'));
+                                echo '<div class="enumenu_ul menu">';
+                                    wp_nav_menu(array('menu_class' => ' menu', 'menu' => 'Main Menu'));
+                                    echo '<ul class="brand-topbar visible-sm">';
+                                        foreach($header_icon as $row):
+                                            $icon=$row['icon'];
+                                            $link=$row['link'];
+                                                echo '<li><a href="'.$link.'"><img src="'.$icon['url'].'" alt="'.$icon['alt'].'"></a></li>';
+                                        endforeach;
+                                    echo '</ul>';   
+                                echo '</div>';
                             ?>
                         </div>
                     </div>

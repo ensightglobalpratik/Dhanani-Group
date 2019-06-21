@@ -464,6 +464,8 @@ h4 {color: #1854cc;font-size: 24px;line-height: 30px; margin-bottom: 10px;}
 h5 {color: #1854cc;font-size: 21px;line-height: 27px; margin-bottom: 10px;}
 h6 {color: #1854cc;font-size: 18px;line-height: 24px; margin-bottom: 10px;}
 
+.visible-sm { display: none !important; }
+
 .button { font-family: 'Roboto'; font-weight: normal; background-color: #d7b303; color: #fff; font-size: 30px; line-height: 36px; padding: 10px 20px; display: inline-block; }
 .button:hover, .button:focus { background-color: #ac8f01; color: #fff; }
 
@@ -615,6 +617,12 @@ a.morelink { text-decoration:none; outline: none;display: block;}
 .more { font-family: 'Roboto'; font-weight: normal; font-size: 22px; color: #7a838c; }
 .more .arrow_sign { font-size: 22px; }
 
+.recent_news .news_row .news_thumb_col:nth-child(2) { transition-delay: .4s }
+.recent_news .news_row .news_thumb_col:nth-child(3) { transition-delay: .8s }
+
+
+
+
 /* ################
                About Page 
 ################ */
@@ -738,10 +746,11 @@ span.wpcf7-not-valid-tip { margin-top: 10px; }
 .our_headquarters { position: relative; }
 .google_map { position: absolute; top: 0;left: 0; bottom: 0; width: 50%; }
 .google_map iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
-.headquarters_row { display: flex; }
-.headquarters_col {margin-left: auto;padding-top: 118px;padding-bottom: 96px;text-align: right;}
+.headquarters_row { display: flex; flex-wrap: wrap; }
+.headquarters_col {width: 50%;padding-left: 15px;padding-right: 15px;margin-left: auto;padding-top: 118px;padding-bottom: 96px;text-align: right;}
 .headquarters_col .heading_title { margin-bottom: 63px; }
 .headquarters_col address p {font-size: 30px;line-height: 38px;margin-bottom: 39px;}
+.headquarters_col address p:last-child { margin-bottom: 0; }
 .headquarters_col address p a { color: #000000; }
 .headquarters_col address p a:hover, .headquarters_col address p a:focus { color: #1854cc; }
 /* ################
@@ -756,7 +765,7 @@ span.wpcf7-not-valid-tip { margin-top: 10px; }
 .news_row_sec .news_thumb_content .sub_title { font-size: 25px; line-height: 31px; color: #484646; margin-bottom: 15px; display: block; }
 .news_row_sec .content_link { float: right; }
 
-.pagination_wrap { display: flex; justify-content: center; position: relative; padding-top: 15px; padding-bottom: 15px; }
+.pagination_wrap { display: flex; justify-content: center; position: relative; padding-top: 30px; padding-bottom: 30px; }
 .pagination_wrap .nav-links .nav-previous, .pagination_wrap .nav-links .nav-next { position: absolute; font-size: 25px; line-height: 31px; }
 .pagination_wrap .nav-links .nav-previous { right: 15px; }
 .pagination_wrap .nav-links .nav-next { left: 15px; }
@@ -765,7 +774,19 @@ span.wpcf7-not-valid-tip { margin-top: 10px; }
 .pagination_wrap .posts-navigation + span { font-family: 'Roboto'; font-weight: normal; color: #08143a; font-size: 16px; line-height: 22px; } 
 
 .news_single_sec { padding-top: 50px; padding-bottom: 50px; }
+.news_single_sec .entry-footer { margin-bottom: 15px; }
 .news_single_sec .post-thumbnail { margin-bottom: 15px; }
+.news_single_sec .nav-links { display: flex; font-size: 20px;line-height: 26px; }  
+.news_single_sec .nav-links a { font-family: 'Roboto'; font-weight: normal; color: #7a838c; position: relative; }
+.news_single_sec .nav-links a:hover, .news_single_sec .nav-links a:focus { color: #08143a; }
+.news_single_sec .nav-links .nav-previous { margin-right: auto;  }
+.news_single_sec .nav-links .nav-next { margin-left: auto; padding-right: 15px; }
+.news_single_sec .nav-links .nav-previous a { padding-left: 30px; }
+.news_single_sec .nav-links .nav-next a { padding-right: 30px; }
+.news_single_sec .nav-links a:before {font-size: 30px;line-height: 24px;color: #d7b303; position: absolute; top: 0; }
+.news_single_sec .nav-links .nav-previous a:before {content: '<';  left: 0; }
+.news_single_sec .nav-links .nav-next a:before {content: '>';  right: 0;}
+
 
 /* ################
                Careers page

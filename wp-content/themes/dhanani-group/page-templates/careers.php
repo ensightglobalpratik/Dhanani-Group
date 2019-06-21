@@ -57,7 +57,7 @@ while ( have_posts() ) :
                 $subtitle=get_sub_field('subtitle');
 ?>
                     <!-- Annual Promotions -->
-                    <section class="annual_promotions_sec" style="background-image: url('<?php echo $background_image['url']; ?>');">
+                    <section class="annual_promotions_sec number_scroll" style="background-image: url('<?php echo $background_image['url']; ?>');">
                         <div class="container">
                             <div class="heading_title right">
                                 <?php echo (!empty($title)? '<h2>'.$title.'</h2>':'');?>
@@ -107,13 +107,13 @@ while ( have_posts() ) :
                     <div class="content_module <?php echo $cl.' '.$bg_class;?>" style="background-image: url('<?php echo $background_image['url']; ?>');">
                         <div class="container">
                             <div class="content_module_row">
-                                <div class="content_module_title">
+                                <div class="content_module_title" data-aos="fade-right">
                                     <div class="heading_title">
                                         <?php echo (!empty($title)? '<h2>'.$title.'</h2>':'');?>
                                         <?php echo (!empty($subtitle)? '<p>'.$subtitle.'</p>':'');?>
                                     </div>
                                 </div>
-                                <div class="content_module_content">
+                                <div class="content_module_content" data-aos="fade-left">
                                     <?php echo (!empty($content)? $content :'');?>
                                     <?php echo (!empty($button_link)? '<a href="'.$button_link.'" title="'.$button_label.'" class="button">'.$button_label.'</a>' :'');?>                                    
                                 </div>
